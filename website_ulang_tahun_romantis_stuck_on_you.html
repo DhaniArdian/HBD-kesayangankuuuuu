@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Kesayangankuu yang Palinggg Canciii Seeduuuniiiaaaa (21 November) — Stuck On You</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Canvas Confetti for Birthday Celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF6F0',
+                        creamDark: '#F2EAE0',
+                        roseDust: '#D8A7B1',
+                        roseDeep: '#B67B88',
+                        lavenderSoft: '#D5CFE1',
+                        goldAccent: '#C5A059',
+                        inkDark: '#3A3238',
+                        inkMuted: '#6E626B'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        hand: ['"Caveat"', 'cursive']
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseSoft: {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.95' },
+                            '50%': { transform: 'scale(1.06)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF6F0;
+            color: #3A3238;
+            overflow-x: hidden;
+        }
+
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 40;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .dreamy-glow {
+            background: radial-gradient(circle at 15% 15%, rgba(216, 167, 177, 0.3) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 25%, rgba(213, 207, 225, 0.35) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 75%, rgba(197, 160, 89, 0.18) 0%, transparent 55%);
+        }
+
+        .polaroid {
+            background: #FFFFFF;
+            padding: 14px 14px 28px 14px;
+            box-shadow: 0 10px 25px -5px rgba(58, 50, 56, 0.12), 0 4px 10px -2px rgba(58, 50, 56, 0.06);
+            transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: pointer;
+        }
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.03) translateY(-6px) !important;
+            box-shadow: 0 22px 45px -10px rgba(182, 123, 136, 0.28);
+            z-index: 20;
+        }
+
+        .gif-card {
+            background: #FFFFFF;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 12px 30px -8px rgba(58, 50, 56, 0.14);
+            border: 1px solid rgba(216, 167, 177, 0.35);
+            transition: all 0.4s ease;
+        }
+        .gif-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(182, 123, 136, 0.25);
+        }
+
+        .flip-card {
+            perspective: 1000px;
+            height: 230px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .wax-seal {
+            background: radial-gradient(circle at 30% 30%, #D48494, #A25464);
+            box-shadow: 0 6px 16px rgba(162, 84, 100, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+        }
+        .paper-texture {
+            background-color: #FFFDF9;
+            background-image: linear-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 1px);
+            background-size: 100% 2.1rem;
+            line-height: 2.1rem;
+        }
+
+        .coupon-card {
+            position: relative;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF4EE 100%);
+            border: 1px dashed #D8A7B1;
+        }
+        .coupon-card::before, .coupon-card::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background-color: #FAF6F0;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid rgba(216, 167, 177, 0.35);
+        }
+        .coupon-card::before { left: -12px; }
+        .coupon-card::after { right: -12px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF6F0; }
+        ::-webkit-scrollbar-thumb { background: #D8A7B1; border-radius: 999px; }
+
+        .petal {
+            position: fixed;
+            background: radial-gradient(circle, #fca5a5 0%, #f43f5e 100%);
+            border-radius: 150% 0 150% 0;
+            pointer-events: none;
+            opacity: 0.3;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translate(0, -10px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translate(120px, 105vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-roseDust/30 selection:text-inkDark">
+
+    <!-- Film Grain Overlay -->
+    <div class="film-grain"></div>
+
+    <!-- Falling Petals Background Container -->
+    <div id="petalsContainer" class="pointer-events-none fixed inset-0 overflow-hidden z-10"></div>
+
+    <!-- AUDIO ELEMENT PEMUTAR LAGU LANY - STUCK (LYRICS).MP3 -->
+    <audio id="customAudio" loop preload="auto" src="LANY%20-%20Stuck%20(Lyrics).mp3"></audio>
+
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform -translate-y-4">
+        <div class="bg-inkDark/95 backdrop-blur-md text-cream px-5 py-2.5 rounded-full shadow-lg text-sm flex items-center gap-2 border border-goldAccent/30">
+            <i data-lucide="sparkles" class="w-4 h-4 text-goldAccent"></i>
+            <span id="toastMessage">Pesan tersimpan</span>
+        </div>
+    </div>
+
+    <!-- Floating Vinyl Music Controller -->
+    <div id="musicControl" class="fixed bottom-5 right-5 z-40 hidden items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-full shadow-2xl border border-roseDust/50 transition-all hover:scale-105">
+        <button id="toggleMusicBtn" onclick="toggleAudio()" class="flex items-center gap-3 focus:outline-none" aria-label="Putar atau Jeda Musik">
+            <div id="vinylDisc" class="w-10 h-10 rounded-full bg-gradient-to-tr from-inkDark via-stone-800 to-inkDark flex items-center justify-center shadow-inner animate-spin-slow relative border-2 border-stone-600">
+                <div class="w-4 h-4 rounded-full bg-roseDust border-2 border-cream flex items-center justify-center">
+                    <div class="w-1 h-1 rounded-full bg-inkDark"></div>
+                </div>
+            </div>
+            <div class="text-left pr-2">
+                <div class="flex items-center gap-1.5">
+                    <p class="text-[12px] font-bold text-inkDark leading-tight">LANY — Stuck On You</p>
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                </div>
+                <p id="musicStatusText" class="text-[10px] text-roseDeep font-medium">Sedang diputar • ♫</p>
+            </div>
+        </button>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- HALAMAN PEMBUKA (OPENING SCREEN)                                      -->
+    <!-- ===================================================================== -->
+    <section id="openingScreen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#1E171C] text-cream px-6 text-center transition-opacity duration-1000">
+        <canvas id="fireflyCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+        
+        <div class="relative z-10 max-w-lg mx-auto space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-roseDust/40 text-roseDust text-xs tracking-widest uppercase">
+                <i data-lucide="cake" class="w-3.5 h-3.5 text-goldAccent"></i>
+                <span>Edisi Spesial 21 November</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-normal italic leading-tight text-cream">
+                "I'm still stuck on you, <br>
+                <span class="text-roseDust not-italic font-semibold">every single day.</span>"
+            </h1>
+
+            <p class="text-sm sm:text-base text-cream/80 font-light leading-relaxed max-w-md mx-auto">
+                Sebuah ruang kecil dari Mamas untuk kesayangankuu yang paling canci sedunia, merangkum semua senyum, tawa, dan kenangan indah kita dari Pantai Sundak hingga hari ini. Pakai earphone Adek yaa, dan mari kita mulai.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button onclick="startJourney()" class="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-roseDust via-roseDeep to-[#9C6370] text-white font-medium text-sm sm:text-base shadow-[0_0_35px_rgba(216,167,177,0.55)] hover:shadow-[0_0_50px_rgba(216,167,177,0.85)] transition-all duration-500 hover:-translate-y-0.5 active:scale-95">
+                    <span>Buka Kado & Putar Lagu</span>
+                    <i data-lucide="heart" class="w-4 h-4 fill-white transition-transform group-hover:scale-125"></i>
+                </button>
+            </div>
+            
+            <p class="text-[11px] text-cream/50 tracking-wider">
+                Soundtrack: LANY - Stuck On You (Lyrics)
+            </p>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- KONTEN UTAMA WEBSITE                                                  -->
+    <!-- ===================================================================== -->
+    <main id="mainContent" class="hidden opacity-0 transition-opacity duration-1000 dreamy-glow">
+
+        <!-- BAGIAN 1: BANNER ULANG TAHUN 21 NOVEMBER & HERO -->
+        <header class="min-h-screen flex flex-col items-center justify-center px-5 py-20 text-center relative">
+            <div class="max-w-3xl mx-auto space-y-6">
+                
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-roseDust/50 shadow-sm">
+                    <span class="text-xs uppercase tracking-[0.25em] text-roseDeep font-bold flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-goldAccent"></i>
+                        Spesial Hari Ulang Tahun • 21 November
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-goldAccent"></i>
+                    </span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-inkDark leading-[1.2]">
+                    Selamat Ulang Tahun, <br>
+                    <span id="displayPartnerName" class="italic text-roseDeep font-normal">Kesayangankuu yang Palinggg Canciii Seeduuuniiiaaaa</span>
+                </h1>
+
+                <p id="displayHeroSubtitle" class="text-inkMuted text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                    Selamat tanggal 21 November! Hari di mana dunia kedatangan orang paling berharga di hidup Mamas. Terima kasih sudah tumbuh menjadi pribadi yang sehangat dan seindah ini untuk Mamas.
+                </p>
+
+                <div class="pt-2">
+                    <button onclick="fireConfetti()" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-roseDust/20 hover:bg-roseDust/35 text-roseDeep border border-roseDust/40 font-medium text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-sm">
+                        <i data-lucide="party-popper" class="w-4 h-4"></i>
+                        <span>Ketuk untuk Tiup Lilin & Rayakan! 🎂</span>
+                    </button>
+                </div>
+
+                <!-- Live Relationship & Birthday Celebration Counter -->
+                <div class="pt-6">
+                    <div class="inline-block bg-white/85 backdrop-blur-md border border-roseDust/35 rounded-3xl p-6 sm:p-8 shadow-[0_15px_40px_-15px_rgba(182,123,136,0.2)] max-w-2xl w-full">
+                        <div class="mb-5">
+                            <p class="text-xs uppercase tracking-widest text-inkMuted flex items-center justify-center gap-2 font-medium">
+                                <i data-lucide="heart" class="w-3.5 h-3.5 text-roseDeep fill-roseDeep"></i>
+                                <span>Waktu yang Sudah Kita Lewati Bersama</span>
+                                <i data-lucide="heart" class="w-3.5 h-3.5 text-roseDeep fill-roseDeep"></i>
+                            </p>
+                            <p class="text-[11px] text-roseDeep font-medium mt-1">
+                                Dihitung sejak hari pertama Mamas dan Adek resmi jadian di Pantai Sundak: <strong>28 Mei 2022</strong>
+                            </p>
+                        </div>
+                        
+                        <!-- 6 Box Grid: Tahun, Bulan, Hari, Jam, Menit, Detik -->
+                        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3">
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countYears" class="block font-serif text-2xl sm:text-3xl font-bold text-inkDark">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-inkMuted uppercase tracking-wider font-semibold">Tahun</span>
+                            </div>
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countMonths" class="block font-serif text-2xl sm:text-3xl font-bold text-inkDark">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-inkMuted uppercase tracking-wider font-semibold">Bulan</span>
+                            </div>
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countDays" class="block font-serif text-2xl sm:text-3xl font-bold text-inkDark">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-inkMuted uppercase tracking-wider font-semibold">Hari</span>
+                            </div>
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countHours" class="block font-serif text-2xl sm:text-3xl font-bold text-inkDark">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-inkMuted uppercase tracking-wider font-semibold">Jam</span>
+                            </div>
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countMinutes" class="block font-serif text-2xl sm:text-3xl font-bold text-inkDark">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-inkMuted uppercase tracking-wider font-semibold">Menit</span>
+                            </div>
+                            <div class="bg-cream rounded-2xl p-3 border border-roseDust/25 shadow-sm">
+                                <span id="countSeconds" class="block font-serif text-2xl sm:text-3xl font-bold text-roseDeep">0</span>
+                                <span class="text-[10px] sm:text-[11px] text-roseDeep uppercase tracking-wider font-semibold">Detik</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-roseDust/20 flex flex-col sm:flex-row items-center justify-center gap-2">
+                            <span class="text-xs text-inkMuted">Atau setara dengan:</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-roseDust/20 text-roseDeep font-bold text-xs">
+                                <i data-lucide="calendar-heart" class="w-3.5 h-3.5"></i>
+                                <span id="countTotalDays">0</span> Hari Mamas & Adek Bersama
+                            </span>
+                        </div>
+
+                        <p class="mt-3 text-xs sm:text-sm text-inkMuted italic font-serif">
+                            "Dan di setiap detiknya, hati Mamas selalu memilih untuk tetap stuck on Adek."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <a href="#photoSection" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-inkMuted/60 hover:text-roseDeep transition-colors animate-bounce flex flex-col items-center gap-1" aria-label="Lihat kenangan kita">
+                <span class="text-[11px] uppercase tracking-wider font-medium text-roseDeep">Kenangan Mamas & Adek</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </a>
+        </header>
+
+        <!-- ===================================================================== -->
+        <!-- BAGIAN 2: GALERI FOTO POLAROID LENGKAP KITA                            -->
+        <!-- ===================================================================== -->
+        <section id="photoSection" class="py-20 px-5 max-w-6xl mx-auto space-y-24">
+            
+            <div class="text-center max-w-xl mx-auto reveal">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldAccent font-semibold">Galeri Kenangan Kita</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-inkDark mt-2">Jejak Langkah Mamas & Adek</h2>
+                <p class="text-inkMuted text-sm sm:text-base mt-3 font-light">
+                    Setiap foto menyimpan tawa, kehangatan, dan cerita manis yang kita lalui berdua. Ketuk foto mana saja untuk memperbesar!
+                </p>
+            </div>
+
+            <!-- ================= BABAK 1: AWAL KISAH & MOMEN BERKESAN ================= -->
+            <div class="space-y-6">
+                <div class="border-b border-roseDust/30 pb-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-roseDeep">Babak 01</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-inkDark">Awal Cerita & Hari-Hari Manis</h3>
+                    </div>
+                    <span class="text-xs text-inkMuted hidden sm:inline font-hand text-lg">Pantai Sundak, Jajan & FT UGM</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Foto 1 (Kiri): Pertama Kali Jadian di Pantai Sundak -->
+                    <div class="polaroid rounded-2xl -rotate-2 reveal" onclick="openPhotoModal('IMG-20220528-WA0005.jpg', 'Pertama Kali Jadian di Pantai Sundak', '28 Mei 2022 — Momen paling bersejarah saat Mamas dan Adek resmi jadian di tepi Pantai Sundak. Awal dari kisah cinta indah kita yang terus bertahan sampai hari ini.')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="IMG-20220528-WA0005.jpg" alt="Pertama Kali Jadian di Pantai Sundak" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                28 Mei 2022 • Pantai Sundak
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Hari Pertama Kita Jadian</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen pertama kali Mamas dan Adek jadian di Pantai Sundak. Dari hembusan angin laut waktu itu, perjalanan cinta kita resmi dimulai.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Hari jadian kita di Pantai Sundak ♡</p>
+                    </div>
+
+                    <!-- Foto 2 (Tengah): Momen Pas Kita Jajan -->
+                    <div class="polaroid rounded-2xl rotate-2 reveal" onclick="openPhotoModal('IMG_20230629_155801_010.webp', 'Momen Pas Kita Jajan', '29 Juni 2023 — Momen seru dan lucu pas Mamas dan Adek lagi jajan bareng. Menikmati jajanan favorit sambil ketawa-tawa tanpa beban.')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="IMG_20230629_155801_010.webp" alt="Momen Pas Kita Jajan" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                29 Juni 2023 • Jajan Bareng
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Momen Pas Kita Jajan</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen manis dan gemas pas kita berdua jajan. Beli camilan enak, foto lucu bareng Adek, rasanya selalu bikin Mamas bahagia.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Jajan & tawa ceria bareng Adek ♡</p>
+                    </div>
+
+                    <!-- Foto 3 (Kanan): Di FT UGM Nemenin Technocorner -->
+                    <div class="polaroid rounded-2xl -rotate-1 reveal" onclick="openPhotoModal('IMG_20230802_105809.jpg', 'Di FT UGM Nemenin Technocorner', '2 Agustus 2023 — Momen pas Adek nemenin Mamas di Fakultas Teknik UGM buat acara Technocorner. Terima kasih banyak Adek selalu setia menemani!')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="IMG_20230802_105809.jpg" alt="FT UGM Technocorner" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                2 Agustus 2023 • FT UGM
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Adek Nemenin di FT UGM</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen berharga waktu Adek nemenin Mamas di FT UGM untuk Technocorner. Berkeliling kampus jadi terasa menyenangkan karena ada Adek di samping Mamas.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Nemenin Technocorner di FT UGM ♡</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= BABAK 2: KEMBALI MENGUNJUNGI PANTAI SUNDAK (3 FOTO SUNDAK) ================= -->
+            <div class="space-y-6">
+                <div class="border-b border-roseDust/30 pb-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-roseDeep">Babak 02</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-inkDark">Kembali Mengunjungi Pantai Sundak Lagiiii</h3>
+                    </div>
+                    <span class="text-xs text-inkMuted hidden sm:inline font-hand text-lg">Tempat Pertama Kita Jadian</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Sundak 1: IMG_2447.JPG -->
+                    <div class="polaroid rounded-2xl rotate-1 reveal" onclick="openPhotoModal('IMG_2447.JPG', 'Kembali ke Pantai Sundak Lagiiii', 'Momen saat Mamas dan Adek kembali mengunjungi Pantai Sundak lagiiii! mamass seneengg bangeet bisaa ke pantai sundak lagii sama kesayangankuuuuuuu')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="IMG_2447.JPG" alt="Kembali ke Pantai Sundak" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                Pantai Sundak • Revisit
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Nostalgia di Pantai Sundak</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen saat Mamas dan Adek kembali mengunjungi Pantai Sundak lagiiii! mamass seneengg bangeet bisaa ke pantai sundak lagii sama kesayangankuuuuuuu
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Balik ke Pantai Sundak lagiii ♡</p>
+                    </div>
+
+                    <!-- Sundak 2: sundak/IMG20250101153447.jpg -->
+                    <div class="polaroid rounded-2xl -rotate-2 reveal" onclick="openPhotoModal('sundak/IMG20250101153447.jpg', 'Menikmati Ombak di Sundak', 'momen dimana kita duduk dan menikmati ombak sembari mengingat momen dimana kita pertama kali kesiniiii dan berjanjii akann kesinii lagiiiiiii')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="sundak/IMG20250101153447.jpg" alt="Pantai Sundak Bersama Adek" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                Pantai Sundak • Pesona Laut
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Menikmati Ombak Bersama</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            momen dimana kita duduk dan menikmati ombak sembari mengingat momen dimana kita pertama kali kesiniiii dan berjanjii akann kesinii lagiiiiiii
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Janji ke Sundak lagii ♡</p>
+                    </div>
+
+                    <!-- Sundak 3: sundak/IMG20250101153450.jpg -->
+                    <div class="polaroid rounded-2xl rotate-2 reveal" onclick="openPhotoModal('sundak/IMG20250101153450.jpg', 'Sudut Kenangan Sundak', 'Setiap sudut Pantai Sundak selalu menyimpan cerita manis tentang Mamas dan Adek yang nggak akan pernah terlupakan.')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="sundak/IMG20250101153450.jpg" alt="Keindahan Pantai Sundak" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                Pantai Sundak • Abadi
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Tempat Hati Kita Berlabuh</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Setiap sudut Pantai Sundak selalu menyimpan cerita manis tentang Mamas dan Adek yang nggak akan pernah terlupakan.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Sundak selalu di hati ♡</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= BABAK 3: HUNTING MIE AYAM GORENG (3 FOTO MIE AYAM GORENG) ================= -->
+            <div class="space-y-6">
+                <div class="border-b border-roseDust/30 pb-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-roseDeep">Babak 03</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-inkDark">Hunting Mie Ayam Goreng Pengganti Resep Budhe</h3>
+                    </div>
+                    <span class="text-xs text-inkMuted hidden sm:inline font-hand text-lg">Misi Kuliner Berdua</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Mie Ayam 1: 20250413_175658.jpg -->
+                    <div class="polaroid rounded-2xl -rotate-2 reveal" onclick="openPhotoModal('20250413_175658.jpg', 'Hunting Mie Ayam Goreng (Part 1)', '13 April 2025 — Pas kita hunting mie ayam goreng karena lagi pengen banget yang mirip kayak punya budhe, soalnya budhe udah nggak jualan lagi!')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="20250413_175658.jpg" alt="Hunting Mie Ayam Goreng" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                13 April 2025 • Hunting Kuliner
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Misi Berburu Mie Ayam Goreng</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen pas kita berdua keliling hunting mie ayam goreng yang rasanya mirip kayak buatan budhe, karena budhe udah nggak jualan lagi. Petualangan seru Mamas dan Adek!
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Demi mie ayam mirip budhe ♡</p>
+                    </div>
+
+                    <!-- Mie Ayam 2: 20250413_180048.jpg -->
+                    <div class="polaroid rounded-2xl rotate-1 reveal" onclick="openPhotoModal('20250413_180048.jpg', 'Hunting Mie Ayam Goreng (Part 2)', 'waalaupunn tidak sesuai dengan ekspetasi karna susah sekaliii mencari yang mirip dan seenak punyaa budhee, tapi seenggaknya kitaa menikmati waktu berduaa maa xixixi')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="20250413_180048.jpg" alt="Misi Mie Ayam Goreng Berhasil" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                13 April 2025 • Senyum Bahagia
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Menikmati Waktu Berdua</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            waalaupunn tidak sesuai dengan ekspetasi karna susah sekaliii mencari yang mirip dan seenak punyaa budhee, tapi seenggaknya kitaa menikmati waktu berduaa maa xixixi
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Menikmati waktu berdua xixixi ♡</p>
+                    </div>
+
+                    <!-- Mie Ayam 3: mie ayam goreng/20250413_180055.jpg -->
+                    <div class="polaroid rounded-2xl -rotate-1 reveal" onclick="openPhotoModal('mie%20ayam%20goreng/20250413_180055.jpg', 'Sesi Potret Mengabadikan Momen', 'sesi potret dimana kitaa selalu mengabadikan momeen apalagii pass jajaannnnnn sama kesayangankuuuu hehe')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="mie%20ayam%20goreng/20250413_180055.jpg" alt="Sesi Potret Jajan" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                13 April 2025 • Momen Manis
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Sesi Potret Jajan Bareng</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            sesi potret dimana kitaa selalu mengabadikan momeen apalagii pass jajaannnnnn sama kesayangankuuuu hehe
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Selalu mengabadikan momen hehe ♡</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= BABAK 4: IKAN BAKAR DI PANTAI JUNGWOK & CANDAAN IJAT (3 FOTO) ================= -->
+            <div class="space-y-6">
+                <div class="border-b border-roseDust/30 pb-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-roseDeep">Babak 04</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-inkDark">Makan Ikan Bakar di Pantai Jungwok & Candaan Legendaris</h3>
+                    </div>
+                    <span class="text-xs text-inkMuted hidden sm:inline font-hand text-lg">Pantai Jungwok Kuliner</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Jungwok 1: 20260104_122318.jpg -->
+                    <div class="polaroid rounded-2xl rotate-1 reveal" onclick="openPhotoModal('20260104_122318.jpg', 'Ikan Bakar Pantai Jungwok', 'itu adalah momen setelah adekk dan mamasss mamamm ikan bakar dan dikasi tutor adekkk gimana cara foto yang estetik buat kitaa berduaaaa')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="20260104_122318.jpg" alt="Makan Ikan Bakar di Pantai Jungwok" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                4 Januari 2026 • Pantai Jungwok
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Ikan Bakar Pantai Jungwok</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            itu adalah momen setelah adekk dan mamasss mamamm ikan bakar dan dikasi tutor adekkk gimana cara foto yang estetik buat kitaa berduaaaa
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Tutor foto estetik dari Adek ♡</p>
+                    </div>
+
+                    <!-- Jungwok 2: 20260104_131818.jpg -->
+                    <div class="polaroid rounded-2xl -rotate-1 reveal" onclick="openPhotoModal('20260104_131818.jpg', 'Candaan Ijat Gagap Nawarin Monyet Pisang', 'Salah satu candaan yang paling kita tertawakan waktu itu di Pantai Jungwok: pas Ijat gagap nawarin monyet pisang! Tiap ingat pasti langsung ngakak bareng.')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="20260104_131818.jpg" alt="Candaan Ijat Gagap Nawarin Monyet Pisang" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                Pantai Jungwok • Candaan Ijat
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Candaan Ijat & Pisang Monyet</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Salah satu candaan yang paling kita tertawakan waktu itu: pas Ijat gagap nawarin monyet pisang! Setiap kali ingat momen ini, Mamas dan Adek pasti langsung tertawa lepas bareng.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Ijat nawarin monyet pisang! 😂🍌</p>
+                    </div>
+
+                    <!-- Jungwok 3: 20260104_131914.jpg -->
+                    <div class="polaroid rounded-2xl rotate-2 reveal" onclick="openPhotoModal('20260104_131914.jpg', 'Suasana Pantai Jungwok', 'momen ketikaa kitaa foto dan menikmatii suasana pantai jungwook dan disitu jugaa mamass selalu merem karena kalao kena matahari dikitt langsung kayak orang cina sipittttt')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="20260104_131914.jpg" alt="Tawa Bahagia di Pantai Jungwok" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                                Pantai Jungwok • Stuck On You
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Menikmati Suasana Jungwok</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            momen ketikaa kitaa foto dan menikmatii suasana pantai jungwook dan disitu jugaa mamass selalu merem karena kalao kena matahari dikitt langsung kayak orang cina sipittttt
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Silau dikit langsung merem hehe ♡</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= BABAK 5: PHOTOSHOOT ROMANTIS DI PANTAI JUNGWOK ================= -->
+            <div class="space-y-6">
+                <div class="border-b border-roseDust/30 pb-3 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-roseDeep">Babak 05 • Spesial Photoshoot</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-inkDark">Photoshoot Kita di Pantai Jungwok</h3>
+                    </div>
+                    <span class="text-xs text-roseDeep font-semibold hidden sm:inline font-hand text-lg">sampai di upload ditiktok sama fotografernyaa xixixi</span>
+                </div>
+
+                <p class="text-xs sm:text-sm text-inkMuted italic">
+                    Momen photoshoot yang mungkin nggak akan pernah terlupakan seumur hidup... Hasilnya begitu indah dan romantis sampai di upload ditiktok sama fotografernyaa xixixi ✨📸
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Photoshoot 1: jungwok/20260104175745__MG_0008.JPG -->
+                    <div class="polaroid rounded-2xl -rotate-2 reveal" onclick="openPhotoModal('jungwok/20260104175745__MG_0008.JPG', 'Photoshoot Pantai Jungwok (I)', 'salah satuu foto terbaik dan yang paling mamas ingeet sampaiii sekarangggg')">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="jungwok/20260104175745__MG_0008.JPG" alt="Photoshoot Pantai Jungwok" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                                <i data-lucide="camera" class="w-3 h-3 text-roseDeep"></i>
+                                Photoshoot Jungwok • TikTok
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Foto Terbaik yang Paling Mamas Ingat</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            salah satuu foto terbaik dan yang paling mamas ingeet sampaiii sekarangggg
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Paling Mamas ingat selalu! ✨</p>
+                    </div>
+
+                    <!-- Photoshoot 2: jungwok/20260104175934__MG_0023.JPG -->
+                    <div class="polaroid rounded-2xl rotate-2 reveal" onclick="openPhotoModal('jungwok/20260104175934__MG_0023.JPG', 'Photoshoot Pantai Jungwok (II)', 'pas ituuu kita ngerasa kadang ketawa sendiri kalo inget jokes ijaat nawarin monyet pisang sampe heran fotografernyaa dan disitu jugaa mamass ngerasa kayak lagii foto prewedd hehe')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="jungwok/20260104175934__MG_0023.JPG" alt="Tatapan Hangat Photoshoot" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                                <i data-lucide="sparkles" class="w-3 h-3 text-goldAccent"></i>
+                                Momen Tak Terlupakan
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Kayak Lagi Foto Prewedd</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            pas ituuu kita ngerasa kadang ketawa sendiri kalo inget jokes ijaat nawarin monyet pisang sampe heran fotografernyaa dan disitu jugaa mamass ngerasa kayak lagii foto prewedd hehe
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Kayak lagi foto prewedd hehe ♡</p>
+                    </div>
+
+                    <!-- Photoshoot 3: jungwok/20260104180010__MG_0026.JPG -->
+                    <div class="polaroid rounded-2xl -rotate-1 reveal" onclick="openPhotoModal('jungwok/20260104180010__MG_0026.JPG', 'Photoshoot Pantai Jungwok (III)', 'Senja Pantai Jungwok yang menjadi saksi bisu betapa indahnya kisah cinta Mamas dan Adek.')">
+                        <div class="aspect-[3/4] rounded-xl overflow-hidden bg-creamDark mb-3 relative">
+                            <img src="jungwok/20260104180010__MG_0026.JPG" alt="Senja Jungwok Terindah" class="w-full h-full object-cover">
+                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-inkDark text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                                <i data-lucide="heart" class="w-3 h-3 text-roseDeep fill-roseDeep"></i>
+                                Mahakarya Cinta
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-semibold text-inkDark">Kenangan Abadi Bersamamu</h4>
+                        <p class="text-xs text-inkMuted mt-1 leading-relaxed">
+                            Momen berharga yang akan selalu Mamas jaga selamanya. Terima kasih Adek sudah menciptakan memori seindah ini bersama Mamas di Pantai Jungwok.
+                        </p>
+                        <p class="font-hand text-lg text-roseDeep mt-2 text-right">~ Stuck on Adek selamanya ♡</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- BAGIAN 3: BIOSKOP KENANGAN BERGERAK (4 VIDEO LOOPING SEPERTI GIF)     -->
+        <!-- ===================================================================== -->
+        <section class="py-20 px-5 max-w-6xl mx-auto reveal">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldAccent font-semibold">GIF Kenangan Bergerak</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-inkDark mt-2">Momen Hidup yang Terus Berputar</h2>
+                <p class="text-inkMuted text-sm sm:text-base mt-3 font-light">
+                    Semua video kenangan Mamas dan Adek diputar terus menerus layaknya GIF tanpa suara, diiringi alunan manis lagu LANY - Stuck On You.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <!-- Video 1 -->
+                <div class="gif-card p-4 sm:p-5">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] max-h-[460px] mx-auto shadow-inner group">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
+                            <source src="VID20231231204843.mp4" type="video/mp4">
+                        </video>
+                        <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-full font-medium flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-roseDust animate-ping"></span>
+                            31 Des 2023 • 20:48 (GIF)
+                        </span>
+                    </div>
+                    <div class="mt-4 px-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Malam Tahun Baru Berdua (I)</h3>
+                            <span class="text-[11px] px-2.5 py-1 rounded-full bg-roseDust/20 text-roseDeep font-semibold">Looping GIF</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-inkMuted mt-1.5 leading-relaxed">
+                            Malam pergantian tahun 2023 ke 2024. Suasana malam yang ramai tapi di mata Mamas cuma ada Adek yang paling bersinar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="gif-card p-4 sm:p-5">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] max-h-[460px] mx-auto shadow-inner group">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
+                            <source src="VID20231231205925.mp4" type="video/mp4">
+                        </video>
+                        <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-full font-medium flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-roseDust animate-ping"></span>
+                            31 Des 2023 • 20:59 (GIF)
+                        </span>
+                    </div>
+                    <div class="mt-4 px-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Menutup Tahun dengan Manis (II)</h3>
+                            <span class="text-[11px] px-2.5 py-1 rounded-full bg-roseDust/20 text-roseDeep font-semibold">Looping GIF</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-inkMuted mt-1.5 leading-relaxed">
+                            Menghitung mundur pergantian tahun bersama Adek, orang yang paling ingin Mamas temani sampai tahun-tahun berikutnya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="gif-card p-4 sm:p-5">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-video max-h-[320px] mx-auto shadow-inner group">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
+                            <source src="VID20250101145507.mp4" type="video/mp4">
+                        </video>
+                        <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-full font-medium flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-roseDust animate-ping"></span>
+                            1 Jan 2025 • 14:55 (GIF)
+                        </span>
+                    </div>
+                    <div class="mt-4 px-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Potongan Momen Siang 2025</h3>
+                            <span class="text-[11px] px-2.5 py-1 rounded-full bg-roseDust/20 text-roseDeep font-semibold">Looping GIF</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-inkMuted mt-1.5 leading-relaxed">
+                            Detik-detik singkat yang terekam indah di hari pertama tahun baru 2025, bergerak abadi tanpa henti bersama Adek.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="gif-card p-4 sm:p-5">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] max-h-[320px] mx-auto shadow-inner group">
+                        <video autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none">
+                            <source src="VID20250101153956.mp4" type="video/mp4">
+                        </video>
+                        <span class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[11px] px-3 py-1.5 rounded-full font-medium flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-roseDust animate-ping"></span>
+                            1 Jan 2025 • 15:39 (GIF)
+                        </span>
+                    </div>
+                    <div class="mt-4 px-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Tingkah Menggemaskan Adek</h3>
+                            <span class="text-[11px] px-2.5 py-1 rounded-full bg-roseDust/20 text-roseDeep font-semibold">Looping GIF</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-inkMuted mt-1.5 leading-relaxed">
+                            Ekspresi spontan dan gemasnya Adek yang selalu berhasil bikin Mamas tersenyum sendiri tiap melihatnya berulang kali.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- BAGIAN 4: AMPLOP SURAT ULANG TAHUN 21 NOVEMBER (WAX SEAL LOVE LETTER) -->
+        <!-- ===================================================================== -->
+        <section class="py-24 px-5 max-w-3xl mx-auto reveal">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldAccent font-semibold">Dari Palung Hati Mamas</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-inkDark mt-2">Surat Spesial 21 November</h2>
+                <p class="text-inkMuted text-sm mt-2">Ketuk segel lilin bertuliskan hati di bawah ini untuk membuka lembaran suratnya</p>
+            </div>
+
+            <!-- Closed Envelope State -->
+            <div id="envelopeClosed" onclick="openLoveLetter()" class="cursor-pointer max-w-lg mx-auto bg-gradient-to-br from-[#F5E8DE] to-[#E5D1C3] rounded-3xl p-10 sm:p-14 shadow-[0_20px_50px_-15px_rgba(58,50,56,0.2)] border border-goldAccent/30 text-center relative overflow-hidden group transition-transform duration-500 hover:scale-[1.02]">
+                <div class="absolute inset-x-0 top-0 h-28 border-b border-goldAccent/30 bg-white/25 rounded-b-[100%]"></div>
+                
+                <div class="relative z-10 py-6 flex flex-col items-center">
+                    <div class="wax-seal w-20 h-20 rounded-full flex items-center justify-center text-cream animate-pulse-soft group-hover:scale-110 transition-transform">
+                        <i data-lucide="heart" class="w-9 h-9 fill-cream/95"></i>
+                    </div>
+                    <p class="font-serif italic text-2xl text-inkDark mt-6">Untuk Kesayangankuu, di Tanggal 21 November</p>
+                    <span class="mt-2 inline-block text-xs uppercase tracking-widest text-roseDeep font-bold bg-white/80 px-4 py-1.5 rounded-full shadow-sm">
+                        Ketuk untuk Membuka Segel Lilin
+                    </span>
+                </div>
+            </div>
+
+            <!-- Opened Letter State -->
+            <div id="envelopeOpened" class="hidden paper-texture rounded-3xl p-7 sm:p-12 shadow-[0_25px_60px_-15px_rgba(58,50,56,0.18)] border border-goldAccent/40 relative">
+                <div class="flex items-center justify-between border-b border-roseDust/35 pb-4 mb-6">
+                    <div>
+                        <span class="font-hand text-2xl sm:text-3xl text-roseDeep block">Selamat ulang tahun kesayangankuuuu yang palinggg canciii seeeduuuuuniiiaaaa, tepaatt di tanggall 21 November iniii</span>
+                        <span class="text-[11px] text-inkMuted uppercase tracking-wider">A Special Birthday Letter from Mamas Who's Still Stuck on Adek</span>
+                    </div>
+                    <i data-lucide="feather" class="w-6 h-6 text-goldAccent"></i>
+                </div>
+
+                <!-- Typewriter Text Container -->
+                <div id="letterContent" class="font-serif text-lg sm:text-xl text-inkDark whitespace-pre-line leading-relaxed min-h-[300px]"></div>
+
+                <div class="mt-8 pt-6 border-t border-roseDust/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs text-inkMuted">Yang selalu mencintai dan memilih Adek,</p>
+                        <p id="displaySenderName" class="font-hand text-2xl sm:text-3xl text-inkDark mt-0.5">Mamas yang selalu stuck on you</p>
+                    </div>
+                    <button onclick="replayLetter()" class="text-xs text-roseDeep hover:underline flex items-center gap-1.5 py-1 px-3 rounded-full hover:bg-roseDust/15 transition-all">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                        <span>Ketik Ulang Surat</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- BAGIAN 5: ALASAN KENAPA MAMAS SELALU JATUH HATI PADA ADEK (3D CARDS)   -->
+        <!-- ===================================================================== -->
+        <section class="py-20 px-5 max-w-5xl mx-auto reveal">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldAccent font-semibold">Hal-Hal Kecil yang Begitu Indah</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-inkDark mt-2">Kenapa Hati Mamas Selalu Tertuju Pada Adek</h2>
+                <p class="text-inkMuted text-sm sm:text-base mt-2 font-light">
+                    Sentuh setiap kartu untuk membaliknya dan membaca alasan-alasan manis ini.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-white border border-roseDust/30 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-roseDust/20 flex items-center justify-center text-roseDeep mb-4">
+                                <i data-lucide="smile" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Binar di Mata Adek</h3>
+                            <p class="text-xs text-inkMuted mt-2">Ketuk untuk membalik kartu</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-roseDust to-roseDeep text-white shadow-md">
+                            <p class="font-serif italic text-lg leading-relaxed">
+                                "Mamas selalu jatuh cinta sama binar mata Adek setiap kali Adek antusias bercerita tentang hal-hal kecil yang bikin Adek bahagia."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-white border border-roseDust/30 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-lavenderSoft/50 flex items-center justify-center text-inkDark mb-4">
+                                <i data-lucide="shield-heart" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Kehangatan Adek</h3>
+                            <p class="text-xs text-inkMuted mt-2">Ketuk untuk membalik kartu</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-[#9C8CB9] to-[#7A6B99] text-white shadow-md">
+                            <p class="font-serif italic text-lg leading-relaxed">
+                                "Bersama Adek rasanya seperti pulang. Nggak peduli seberapa lelah hari Mamas, di sisi Adek semuanya selalu terasa tenang."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-white border border-roseDust/30 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-goldAccent/25 flex items-center justify-center text-goldAccent mb-4">
+                                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-semibold text-inkDark">Ketulusan Hati Adek</h3>
+                            <p class="text-xs text-inkMuted mt-2">Ketuk untuk membalik kartu</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-goldAccent to-[#A37F3B] text-white shadow-md">
+                            <p class="font-serif italic text-lg leading-relaxed">
+                                "Adek punya cara tersendiri untuk menyayangi dan peduli. Hati Adek adalah hal paling indah yang pernah Mamas temui."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- BAGIAN 6: KUPON KEBERSAMAAN & KAPSUL HARAPAN ULANG TAHUN KE WHATSAPP  -->
+        <!-- ===================================================================== -->
+        <section class="py-20 px-5 max-w-4xl mx-auto reveal">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-goldAccent font-semibold">Hadiah Spesial 21 November</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-inkDark mt-2">Kupon Kebersamaan Mamas & Adek</h2>
+                <p class="text-inkMuted text-sm sm:text-base mt-2 font-light">
+                    Kupon-kupon ini berlaku selamanya tanpa kedaluwarsa. Ketuk kupon untuk memilihnya, lalu kirimkan langsung ke WhatsApp Mamas!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
+                <!-- Coupon 1 -->
+                <div onclick="claimCoupon(this, '1x Quality Time Sepuasnya Tanpa HP')" class="coupon-card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-roseDeep font-semibold">Voucher #01</span>
+                        <h4 class="font-serif text-2xl font-semibold text-inkDark mt-0.5">1x Quality Time Tanpa HP</h4>
+                        <p class="text-xs text-inkMuted mt-1">Fokus penuh Mamas dan Adek ngobrol berdua tanpa gangguan gadget apa pun.</p>
+                    </div>
+                    <div class="stamp-area shrink-0">
+                        <span class="px-3 py-1.5 rounded-full bg-roseDust/20 text-roseDeep text-xs font-semibold">Klaim</span>
+                    </div>
+                </div>
+
+                <!-- Coupon 2 -->
+                <div onclick="claimCoupon(this, '1x Traktir Makanan Favorit Adek')" class="coupon-card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-roseDeep font-semibold">Voucher #02</span>
+                        <h4 class="font-serif text-2xl font-semibold text-inkDark mt-0.5">1x Traktir Makanan Favorit</h4>
+                        <p class="text-xs text-inkMuted mt-1">Adek bebas pilih tempat makan atau menu apa pun yang lagi Adek inginkan.</p>
+                    </div>
+                    <div class="stamp-area shrink-0">
+                        <span class="px-3 py-1.5 rounded-full bg-roseDust/20 text-roseDeep text-xs font-semibold">Klaim</span>
+                    </div>
+                </div>
+
+                <!-- Coupon 3 -->
+                <div onclick="claimCoupon(this, '1x Pelukan Hangat Tanpa Batas')" class="coupon-card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-roseDeep font-semibold">Voucher #03</span>
+                        <h4 class="font-serif text-2xl font-semibold text-inkDark mt-0.5">1x Pelukan Tanpa Batas</h4>
+                        <p class="text-xs text-inkMuted mt-1">Kapan pun hari Adek terasa berat atau lagi butuh senderan, Mamas selalu ada buat Adek.</p>
+                    </div>
+                    <div class="stamp-area shrink-0">
+                        <span class="px-3 py-1.5 rounded-full bg-roseDust/20 text-roseDeep text-xs font-semibold">Klaim</span>
+                    </div>
+                </div>
+
+                <!-- Coupon 4 -->
+                <div onclick="claimCoupon(this, '1x Bebas Pilih Liburan / Jalan Sore Bareng Mamas')" class="coupon-card rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-widest text-roseDeep font-semibold">Voucher #04</span>
+                        <h4 class="font-serif text-2xl font-semibold text-inkDark mt-0.5">1x Bebas Pilih Destinasi</h4>
+                        <p class="text-xs text-inkMuted mt-1">Mau hunting kuliner lagi, jalan sore ke pantai, atau keliling kota, Mamas temani ke mana pun!</p>
+                    </div>
+                    <div class="stamp-area shrink-0">
+                        <span class="px-3 py-1.5 rounded-full bg-roseDust/20 text-roseDeep text-xs font-semibold">Klaim</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kapsul Harapan / Reply Box to Email -->
+            <div class="bg-white/85 backdrop-blur-md rounded-3xl p-7 sm:p-10 border border-roseDust/35 shadow-xl text-center max-w-2xl mx-auto">
+                <div class="w-12 h-12 rounded-full bg-roseDust/20 text-roseDeep flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="mail-heart" class="w-6 h-6 text-roseDeep"></i>
+                </div>
+                <h3 class="font-serif text-3xl font-semibold text-inkDark">Doa & Harapan Adek di Tanggal 21 November</h3>
+                <p class="text-sm text-inkMuted mt-2 max-w-md mx-auto">
+                    Tuliskan apa saja doa dan harapan Adek untuk usia baru ini. Pesan ini akan langsung otomatis terkirim ke email Mamas! 💌
+                </p>
+
+                <div class="mt-6 space-y-4">
+                    <textarea id="wishInput" rows="4" placeholder="Tulis harapan Adek di sini yaa... contoh: Mamas, semoga di umur baru Adek ini kita selalu bahagia, makin sayang, dan selalu langgeng sama-sama..." class="w-full rounded-2xl bg-cream border border-roseDust/40 p-4 text-sm text-inkDark placeholder:text-inkMuted/60 focus:outline-none focus:ring-2 focus:ring-roseDeep/40 transition-all"></textarea>
+                    
+                    <button id="sendWishBtn" onclick="sendWishToEmail()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-roseDust via-roseDeep to-[#9C6370] hover:opacity-95 text-cream font-medium text-sm transition-all duration-300 shadow-md hover:scale-105 active:scale-95">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span id="sendWishBtnText">Kirim Harapan Ulang Tahun ke Email Mamas 💌</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER & QUICK EDIT MODAL TOGGLE -->
+        <footer class="py-12 px-5 text-center border-t border-roseDust/25 mt-10">
+            <p class="font-serif italic text-2xl text-inkDark">
+                "No matter where life takes us, Mamas is still stuck on you, Adek."
+            </p>
+            <p class="text-xs text-roseDeep mt-2 font-medium tracking-wide">
+                21 November — Selamat Ulang Tahun, Kesayangannyaaa Mamasss.
+            </p>
+
+            <div class="mt-8">
+                <button onclick="openEditModal()" class="inline-flex items-center gap-1.5 text-[11px] text-inkMuted/70 hover:text-inkDark bg-white/70 hover:bg-white px-4 py-2 rounded-full border border-roseDust/35 transition-all shadow-sm">
+                    <i data-lucide="sliders-horizontal" class="w-3 h-3"></i>
+                    <span>Kustomisasi Nama & Isi Surat (Mode Cepat)</span>
+                </button>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL LIGHTBOX FOTO                                                   -->
+    <!-- ===================================================================== -->
+    <div id="photoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 transition-opacity duration-300" onclick="closePhotoModal(event)">
+        <div class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-6" onclick="event.stopPropagation()">
+            <button onclick="closePhotoModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl bg-creamDark">
+                <img id="modalPhotoImg" src="" alt="Kenangan Penuh" class="max-h-[75vh] w-auto max-w-full object-contain">
+            </div>
+            <div class="mt-4 px-2">
+                <h4 id="modalPhotoTitle" class="font-serif text-2xl font-semibold text-inkDark">Judul Foto</h4>
+                <p id="modalPhotoDesc" class="text-xs sm:text-sm text-inkMuted mt-1">Deskripsi kenangan indah.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL MODE EDIT CEPAT                                                 -->
+    <!-- ===================================================================== -->
+    <div id="editModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-inkDark/70 backdrop-blur-sm p-4">
+        <div class="bg-cream rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-roseDust/40 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-roseDust/25 pb-4 mb-5">
+                <div>
+                    <h3 class="font-serif text-2xl font-semibold text-inkDark">Kustomisasi Website</h3>
+                    <p class="text-xs text-inkMuted">Sesuaikan panggilan, tanggal, nomor WhatsApp, dan isi surat.</p>
+                </div>
+                <button onclick="closeEditModal()" class="p-2 rounded-full hover:bg-roseDust/20 text-inkDark">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-semibold text-inkDark mb-1">Panggilan untuk Pasangan</label>
+                    <input id="editPartnerName" type="text" class="w-full rounded-xl bg-white border border-roseDust/40 px-3.5 py-2.5 text-inkDark focus:outline-none focus:ring-2 focus:ring-roseDeep/40">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-inkDark mb-1">Tanggal Awal Jadian (Default: 2022-05-28)</label>
+                    <input id="editStartDate" type="date" class="w-full rounded-xl bg-white border border-roseDust/40 px-3.5 py-2.5 text-inkDark focus:outline-none focus:ring-2 focus:ring-roseDeep/40">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-inkDark mb-1">Email Mamas (Untuk Terima Pesan Harapan Adek)</label>
+                    <input id="editEmail" type="email" placeholder="dhaniardian028@gmail.com" class="w-full rounded-xl bg-white border border-roseDust/40 px-3.5 py-2.5 text-inkDark focus:outline-none focus:ring-2 focus:ring-roseDeep/40">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-inkDark mb-1">Nama Pengirim (Tanda Tangan)</label>
+                    <input id="editSenderName" type="text" class="w-full rounded-xl bg-white border border-roseDust/40 px-3.5 py-2.5 text-inkDark focus:outline-none focus:ring-2 focus:ring-roseDeep/40">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-inkDark mb-1">Isi Surat Ulang Tahun (21 November)</label>
+                    <textarea id="editLetterText" rows="6" class="w-full rounded-xl bg-white border border-roseDust/40 p-3.5 text-inkDark focus:outline-none focus:ring-2 focus:ring-roseDeep/40 text-sm leading-relaxed"></textarea>
+                </div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-end gap-3">
+                <button onclick="closeEditModal()" class="px-4 py-2.5 rounded-full text-xs font-medium text-inkMuted hover:bg-roseDust/15">Batal</button>
+                <button onclick="saveCustomSettings()" class="px-6 py-2.5 rounded-full text-xs font-medium bg-roseDeep text-white hover:bg-inkDark transition-colors shadow-md">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT LOGIC                                                      -->
+    <!-- ===================================================================== -->
+    <script>
+        lucide.createIcons();
+
+        // Teks Surat Ulang Tahun Asli dari Mamas untuk Adek
+        const rawLetterContent = `Hari ini, semesta merayakan hari kelahiran Adek, dan Mamas adalah orang yang paling bersyukur karena Adek hadir di dunia ini. Terima kasih Adek sudah mengizinkan Mamas berjalan di samping Adek sampaiiii sekarangg inii
+
+mamasss selalu berharap adekk selaluuu bahagiaaa, canciiiii selaluuuuu dan selaluuu bisa menggapai apaa yang adekkk inginkaannnn, mamass akan selalu ada disamping adekkk saat adekk butuh mamass jugaa akan selaluuu support adekk untuk bisa terus majuu dan menggapai semuaa cita citaa adekkk, mamass adalah orang yang ingin sekaliii melihat sayap dariii malaikat kecil mamass bisa mengepakan sayapnya kemanapun adekk inginkan untuk menggapai semua keinginannya kesayangankuuuu
+
+dan satuu hal yang perlu adekk ingaat, mauu bagaimanapun kondisi adekkk, mau bagaimanapunn keadannyaa adekkk mamasss adalah orang yang akan selalu ada buat kesayangakuuuuu, mamass akan selaluu menempatkan adekk sebagai orang favorit nya mamass sampaii selamanyaaa
+
+selaamat ulaang tahunnn kesayanganyaaa mamassss, mamass seneneg bangeett bisa nemenin perjalanan adekkk setiaaappp tahunnn dan selalu adaa di setiap ceritanyaaa kesayangankuuuuu, terimakasihh banyak sudah mengenalkan dan mengajari mamass banyak haall dan membuat anak kecill ini merasa sangaaatt dicintaaiiiiiii
+
+mamasss akan selalluuuu dan selaluuu sayaaaaangg bangeett samaa adekkkk sampaaiiii kapanpunn ituuuuuuuuuuuuu
+
+Love youu more my future bundaa 🩷
+
+sekali lagiii selamat ulang tahun, kesayangannyaaa Mamasss. No matter how much time passes by, Mamas is always stuck on you.`;
+
+        const defaultConfig = {
+            partnerName: "Kesayangankuu yang Palinggg Canciii Seeduuuniiiaaaa",
+            startDate: "2022-05-28",
+            recipientEmail: "dhaniardian028@gmail.com",
+            senderName: "Mamas yang selalu stuck on you",
+            letterText: rawLetterContent
+        };
+
+        // Simpan konfigurasi ke localStorage
+        let appConfig = {
+            partnerName: defaultConfig.partnerName,
+            startDate: "2022-05-28",
+            recipientEmail: "dhaniardian028@gmail.com",
+            senderName: defaultConfig.senderName,
+            letterText: rawLetterContent
+        };
+        localStorage.setItem('romanticBdayConfig', JSON.stringify(appConfig));
+
+        let claimedCoupons = [];
+        let typewriterTimeout = null;
+        let isMusicPlaying = false;
+        const bgAudio = document.getElementById('customAudio');
+
+        function applyConfigToDOM() {
+            document.getElementById('displayPartnerName').textContent = appConfig.partnerName;
+            document.getElementById('displaySenderName').textContent = appConfig.senderName;
+        }
+        applyConfigToDOM();
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('opacity-0', '-translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', '-translate-y-4');
+            }, 3200);
+        }
+
+        function playBackgroundAudio() {
+            if (bgAudio) {
+                bgAudio.volume = 0.85;
+                bgAudio.play().then(() => {
+                    isMusicPlaying = true;
+                    updateMusicUI(true);
+                }).catch(err => {
+                    console.log("Autoplay dicegah browser, klik play:", err);
+                });
+            }
+        }
+
+        function pauseBackgroundAudio() {
+            if (bgAudio) {
+                bgAudio.pause();
+                isMusicPlaying = false;
+                updateMusicUI(false);
+            }
+        }
+
+        function toggleAudio() {
+            if (isMusicPlaying) {
+                pauseBackgroundAudio();
+            } else {
+                playBackgroundAudio();
+            }
+        }
+
+        function updateMusicUI(playing) {
+            const disc = document.getElementById('vinylDisc');
+            const statusText = document.getElementById('musicStatusText');
+            if (playing) {
+                disc.style.animationPlayState = 'running';
+                statusText.textContent = 'Sedang diputar • ♫';
+            } else {
+                disc.style.animationPlayState = 'paused';
+                statusText.textContent = 'Dijeda (Ketuk untuk putar)';
+            }
+        }
+
+        function fireConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 110,
+                    spread: 85,
+                    origin: { y: 0.6 },
+                    colors: ['#D8A7B1', '#B67B88', '#C5A059', '#D5CFE1', '#FF69B4']
+                });
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 70,
+                        angle: 60,
+                        spread: 60,
+                        origin: { x: 0 },
+                        colors: ['#D8A7B1', '#C5A059', '#FAF6F0']
+                    });
+                    confetti({
+                        particleCount: 70,
+                        angle: 120,
+                        spread: 60,
+                        origin: { x: 1 },
+                        colors: ['#B67B88', '#D5CFE1', '#FAF6F0']
+                    });
+                }, 250);
+            }
+            showToast('Selamat Ulang Tahun 21 November, Kesayangankuu! 🎉🎂❤️');
+        }
+
+        function startJourney() {
+            const opening = document.getElementById('openingScreen');
+            const main = document.getElementById('mainContent');
+            const musicCtrl = document.getElementById('musicControl');
+
+            playBackgroundAudio();
+            fireConfetti();
+
+            opening.classList.add('opacity-0', 'pointer-events-none');
+            main.classList.remove('hidden');
+            musicCtrl.classList.remove('hidden');
+            musicCtrl.classList.add('flex');
+
+            setTimeout(() => {
+                main.classList.remove('opacity-0');
+                opening.style.display = 'none';
+                triggerScrollReveal();
+            }, 600);
+        }
+
+        (function initFireflies() {
+            const canvas = document.getElementById('fireflyCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles = [];
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            for (let i = 0; i < 45; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2.2 + 0.8,
+                    dx: (Math.random() - 0.5) * 0.4,
+                    dy: (Math.random() - 0.5) * 0.4 - 0.15,
+                    alpha: Math.random()
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+                    if (p.y < 0) p.y = height;
+                    if (p.y > height) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(216, 167, 177, ${0.35 + Math.sin(Date.now() * 0.002 + p.x) * 0.25})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        (function createPetals() {
+            const container = document.getElementById('petalsContainer');
+            if (!container) return;
+            for (let i = 0; i < 15; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (Math.random() * 8 + 7) + 's';
+                petal.style.animationDelay = (Math.random() * 5) + 's';
+                petal.style.width = (Math.random() * 8 + 8) + 'px';
+                petal.style.height = (Math.random() * 10 + 10) + 'px';
+                container.appendChild(petal);
+            }
+        })();
+
+        function updateCounter() {
+            const startDate = new Date(appConfig.startDate + "T00:00:00");
+            const now = new Date();
+
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+
+            if (days < 0) {
+                months -= 1;
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate();
+            }
+            if (months < 0) {
+                years -= 1;
+                months += 12;
+            }
+
+            let hours = now.getHours() - startDate.getHours();
+            let minutes = now.getMinutes() - startDate.getMinutes();
+            let seconds = now.getSeconds() - startDate.getSeconds();
+
+            if (seconds < 0) {
+                minutes -= 1;
+                seconds += 60;
+            }
+            if (minutes < 0) {
+                hours -= 1;
+                minutes += 60;
+            }
+            if (hours < 0) {
+                days -= 1;
+                hours += 24;
+            }
+
+            const totalMs = Math.max(0, now - startDate);
+            const totalDays = Math.floor(totalMs / (1000 * 60 * 60 * 24));
+
+            document.getElementById('countYears').textContent = Math.max(0, years);
+            document.getElementById('countMonths').textContent = Math.max(0, months);
+            document.getElementById('countDays').textContent = Math.max(0, days);
+            document.getElementById('countHours').textContent = String(Math.max(0, hours)).padStart(2, '0');
+            document.getElementById('countMinutes').textContent = String(Math.max(0, minutes)).padStart(2, '0');
+            document.getElementById('countSeconds').textContent = String(Math.max(0, seconds)).padStart(2, '0');
+            document.getElementById('countTotalDays').textContent = totalDays.toLocaleString('id-ID');
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        function openLoveLetter() {
+            document.getElementById('envelopeClosed').classList.add('hidden');
+            const opened = document.getElementById('envelopeOpened');
+            opened.classList.remove('hidden');
+            fireConfetti();
+            startTypewriter(appConfig.letterText);
+        }
+
+        function replayLetter() {
+            startTypewriter(appConfig.letterText);
+        }
+
+        function startTypewriter(text) {
+            clearTimeout(typewriterTimeout);
+            const target = document.getElementById('letterContent');
+            target.textContent = '';
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    target.textContent += text.charAt(i);
+                    i++;
+                    typewriterTimeout = setTimeout(type, 20);
+                }
+            }
+            type();
+        }
+
+        function openPhotoModal(imgSrc, title, desc) {
+            const modal = document.getElementById('photoModal');
+            document.getElementById('modalPhotoImg').src = imgSrc;
+            document.getElementById('modalPhotoTitle').textContent = title;
+            document.getElementById('modalPhotoDesc').textContent = desc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function claimCoupon(cardEl, couponTitle) {
+            const stampArea = cardEl.querySelector('.stamp-area');
+            if (!cardEl.classList.contains('claimed')) {
+                cardEl.classList.add('claimed', 'bg-roseDust/15');
+                stampArea.innerHTML = `<span class="px-3 py-1.5 rounded-full bg-roseDeep text-white text-xs font-semibold tracking-wider uppercase shadow-sm">KLAIMED ✓</span>`;
+                if (!claimedCoupons.includes(couponTitle)) {
+                    claimedCoupons.push(couponTitle);
+                }
+                showToast(`Kupon "${couponTitle}" dipilih Adek!`);
+            } else {
+                cardEl.classList.remove('claimed', 'bg-roseDust/15');
+                stampArea.innerHTML = `<span class="px-3 py-1.5 rounded-full bg-roseDust/20 text-roseDeep text-xs font-semibold">Klaim</span>`;
+                claimedCoupons = claimedCoupons.filter(item => item !== couponTitle);
+            }
+        }
+
+        async function sendWishToEmail() {
+            const wish = document.getElementById('wishInput').value.trim();
+            if (!wish && claimedCoupons.length === 0) {
+                showToast('Tuliskan harapan Adek atau klaim kuponnya dulu yaa sayang :)');
+                return;
+            }
+
+            const sendBtn = document.getElementById('sendWishBtn');
+            const btnText = document.getElementById('sendWishBtnText');
+            const originalText = btnText.innerHTML;
+
+            sendBtn.disabled = true;
+            btnText.innerHTML = 'Mengirim doa & cinta ke email Mamas... ⏳';
+
+            const payload = {
+                "Nama Pengirim": "Adek Tersayang",
+                "_subject": "💌 Doa & Harapan Ulang Tahun 21 November dari Adek!",
+                "Doa dan Harapan Adek": wish || "(Adek tidak mengisi teks doa, hanya memilih kupon cinta)",
+                "Kupon yang Diklaim": claimedCoupons.length > 0 ? claimedCoupons.join(", ") : "Tidak ada kupon yang dipilih",
+                "Waktu Pengiriman": new Date().toLocaleString('id-ID')
+            };
+
+            const targetEmail = appConfig.recipientEmail || "dhaniardian028@gmail.com";
+
+            try {
+                const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    fireConfetti();
+                    showToast('Doa & kupon Adek berhasil mendarat di email Mamas! 💌🎉');
+                    document.getElementById('wishInput').value = '';
+                    btnText.innerHTML = 'Terkirim ke Email Mamas! ❤️';
+                    setTimeout(() => {
+                        btnText.innerHTML = originalText;
+                        sendBtn.disabled = false;
+                    }, 4000);
+                } else {
+                    throw new Error('Gagal mengirim');
+                }
+            } catch (err) {
+                // Fallback jika offline atau browser membatasi CORS: buat mailto langsung
+                console.log("Kirim via formsubmit dialihkan:", err);
+                const mailSubject = encodeURIComponent("💌 Doa & Harapan Ulang Tahun 21 November dari Adek!");
+                let mailBody = `Hai Mamas, ini doa dan harapan Adek di tanggal 21 November:\n\n"${wish}"\n\n`;
+                if (claimedCoupons.length > 0) {
+                    mailBody += `Kupon yang Adek klaim:\n- ${claimedCoupons.join('\n- ')}\n\n`;
+                }
+                mailBody += `Makasih banyak Mamas, Adek sayang Mamas!`;
+                
+                window.location.href = `mailto:${targetEmail}?subject=${mailSubject}&body=${encodeURIComponent(mailBody)}`;
+                showToast('Membuka aplikasi email Adek untuk kirim ke Mamas... 💌');
+                btnText.innerHTML = originalText;
+                sendBtn.disabled = false;
+            }
+        }
+
+        function openEditModal() {
+            document.getElementById('editPartnerName').value = appConfig.partnerName;
+            document.getElementById('editStartDate').value = appConfig.startDate;
+            document.getElementById('editEmail').value = appConfig.recipientEmail || '';
+            document.getElementById('editSenderName').value = appConfig.senderName;
+            document.getElementById('editLetterText').value = appConfig.letterText;
+
+            const modal = document.getElementById('editModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeEditModal() {
+            const modal = document.getElementById('editModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function saveCustomSettings() {
+            appConfig.partnerName = document.getElementById('editPartnerName').value.trim() || defaultConfig.partnerName;
+            appConfig.startDate = document.getElementById('editStartDate').value || defaultConfig.startDate;
+            appConfig.recipientEmail = document.getElementById('editEmail').value.trim() || defaultConfig.recipientEmail;
+            appConfig.senderName = document.getElementById('editSenderName').value.trim() || defaultConfig.senderName;
+            appConfig.letterText = document.getElementById('editLetterText').value.trim() || defaultConfig.letterText;
+
+            localStorage.setItem('romanticBdayConfig', JSON.stringify(appConfig));
+            applyConfigToDOM();
+            updateCounter();
+
+            if (!document.getElementById('envelopeOpened').classList.contains('hidden')) {
+                startTypewriter(appConfig.letterText);
+            }
+
+            closeEditModal();
+            showToast('Kustomisasi berhasil disimpan!');
+        }
+
+        function triggerScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePhotoModal();
+                closeEditModal();
+            }
+        });
+    </script>
+</body>
+</html>
